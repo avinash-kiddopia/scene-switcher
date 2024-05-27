@@ -20,7 +20,7 @@ namespace PBA.Utils.Scene.Switch{
 
         private List<Button> buttonsList;
 
-        [MenuItem("Tools/Utils/Scene Switcher")]
+        [MenuItem("Tools/Utils/Scene Switcher &s")]
         private static void ShowWindow() {
             var window = GetWindow<SceneSwitcher>();
             window.titleContent = new GUIContent(SCENE_SWITCHER);
