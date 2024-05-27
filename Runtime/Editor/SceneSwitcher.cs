@@ -7,10 +7,10 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 namespace PBA.Utils.Scene.Switch{
-    public class SceneSwitchToolEditorWindow : EditorWindow{
+    public class SceneSwitcher : EditorWindow{
         private const string SCENE_SWITCHER = "Scene Switcher";
-        private const string CUSTOM_ROOT_FOLDER_PREF_KEY = "SceneSwitcher_Utils_CustomRootFolderScene";
-        private const string PLAY_START_SCENE_PREF_KEY = "SceneSwitcher_Utils_PlayStartScene";
+        private const string CUSTOM_ROOT_FOLDER_PREF_KEY = "SceneSwitcher_CustomRootFolderScene";
+        private const string PLAY_START_SCENE_PREF_KEY = "SceneSwitcher_PlayStartScene";
         private const string SCENE_ROOT_FOLDER = "Assets";
         private const string SCENE_SUFFIX = ".unity";
         private const string PLAY_START_SCENE = "Play Start Scene";
@@ -22,7 +22,7 @@ namespace PBA.Utils.Scene.Switch{
 
         [MenuItem("Tools/Utils/Scene Switcher")]
         private static void ShowWindow() {
-            var window = GetWindow<SceneSwitchToolEditorWindow>();
+            var window = GetWindow<SceneSwitcher>();
             window.titleContent = new GUIContent(SCENE_SWITCHER);
             window.Show();
         }
