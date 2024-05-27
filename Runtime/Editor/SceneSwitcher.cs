@@ -114,12 +114,20 @@ namespace PBA.Utils.Scene.Switch{
         private VisualElement GetCustomFolderButton() {
             const string changeLabel = "Change";
             const string rootDirectoryLabel = "Root Directory";
-            var rowVisualElement = new VisualElement { style = { flexDirection = new StyleEnum<FlexDirection>(FlexDirection.Row) } };
+            var rowVisualElement = new VisualElement {
+                style = {
+                    flexDirection = new StyleEnum<FlexDirection>(FlexDirection.Row),
+                    minHeight = 25
+                }
+            };
 
             var label = new Label($"{rootDirectoryLabel}: {GetRootFolder()}") {
                 style = {
                     alignSelf = new StyleEnum<Align>(Align.Center),
-                    flexGrow = 1
+                    flexGrow = 1,
+                    flexShrink = 1,
+                    overflow = new StyleEnum<Overflow>(Overflow.Hidden),
+                    textOverflow = new StyleEnum<TextOverflow>(TextOverflow.Ellipsis)
                 }
             };
 
