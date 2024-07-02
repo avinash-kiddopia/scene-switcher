@@ -59,7 +59,8 @@ namespace PBA.Utils.Scene.Switch{
 
             buttonsList = new List<Button>();
             scenePathDict = new Dictionary<string, string>();
-            foreach (var guid in AssetDatabase.FindAssets(SCENE_FILTER, new[] { $"{SCENE_ROOT_FOLDER}{EditorPrefs.GetString(CUSTOM_ROOT_FOLDER_PREF_KEY)}" })) {
+            foreach (var guid in AssetDatabase.FindAssets(SCENE_FILTER,
+                         new[] { $"{SCENE_ROOT_FOLDER}{EditorPrefs.GetString(CUSTOM_ROOT_FOLDER_PREF_KEY)}" })) {
                 var scenePath = AssetDatabase.GUIDToAssetPath(guid);
                 var sceneName = scenePath.Split('/')[^1].Replace(SCENE_SUFFIX, string.Empty);
                 scenePathDict[sceneName] = scenePath;
@@ -203,7 +204,9 @@ namespace PBA.Utils.Scene.Switch{
         }
 
         private static string GetRootFolder() {
-            return !EditorPrefs.HasKey(CUSTOM_ROOT_FOLDER_PREF_KEY) ? SCENE_ROOT_FOLDER : $"{SCENE_ROOT_FOLDER}{EditorPrefs.GetString(CUSTOM_ROOT_FOLDER_PREF_KEY)}";
+            return !EditorPrefs.HasKey(CUSTOM_ROOT_FOLDER_PREF_KEY)
+                ? SCENE_ROOT_FOLDER
+                : $"{SCENE_ROOT_FOLDER}{EditorPrefs.GetString(CUSTOM_ROOT_FOLDER_PREF_KEY)}";
         }
     }
 }
