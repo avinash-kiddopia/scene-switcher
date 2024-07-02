@@ -187,6 +187,7 @@ namespace PBA.Utils.Scene.Switch{
 
         private void UpdatePlayModeStartScene(string sceneName) {
             if (!scenePathDict.TryGetValue(sceneName, out var scenePath)) {
+                EditorSceneManager.playModeStartScene = null;
                 return;
             }
 
